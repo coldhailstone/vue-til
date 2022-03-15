@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
 	<div>header</div>
 </template>
 
@@ -8,4 +8,4 @@ import Demo from '@/demo/basic/Demo.vue';
 export default {};
 </script>
 
-<style></style>
+<style></style> -->
