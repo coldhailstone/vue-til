@@ -1,10 +1,8 @@
 <template>
-	<div>header</div>
+	<div>login</div>
 </template>
 
 <script>
-import Demo from '@/demo/basic/Demo.vue';
-
 export default {};
 </script>
 
