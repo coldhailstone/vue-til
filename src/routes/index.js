@@ -7,6 +7,10 @@ export default new VueRouter({
 	mode: 'history',
 	routes: [
 		{
+			path: '/',
+			redirect: '/login',
+		},
+		{
 			path: '/login',
 			component: () => import('@/views/LoginPage.vue'),
 		},
