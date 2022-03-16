@@ -8,4 +8,8 @@ function registerUser(userData) {
 	return API.post('/signup', userData);
 }
 
-export { registerUser };
+function loginUser(userData) {
+	return API.post('/login', userData);
+}
+
+export { registerUser, loginUser };
