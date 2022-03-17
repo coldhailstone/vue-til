@@ -4,7 +4,15 @@
 			<h1 class="page-header">Today I Learned</h1>
 			<ul>
 				<li v-for="postItem in postItems" :key="postItem._id">
-					{{ postItem.title }}
+					<div class="post-title">
+						{{ postItem.title }}
+					</div>
+					<div class="post-contents">
+						{{ postItem.contents }}
+					</div>
+					<div class="post-time">
+						{{ postItem.createdAt }}
+					</div>
 				</li>
 			</ul>
 		</div>
@@ -21,7 +29,7 @@ export default {
 		};
 	},
 	methods: {
-		async fetchNotes() {
+		async fetchData() {
 			const { data } = await fetchPosts();
 			this.postItems = data.posts;
 		},
