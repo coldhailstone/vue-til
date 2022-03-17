@@ -18,7 +18,7 @@
 				<button :disabled="!isUsernameValid || !password" type="submit">
 					로그인
 				</button>
-				<p>{{ logMessage }}</p>
+				<p class="log">{{ logMessage }}</p>
 			</form>
 		</div>
 	</div>
