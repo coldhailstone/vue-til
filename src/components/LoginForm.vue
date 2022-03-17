@@ -15,6 +15,7 @@
 
 <script>
 import { loginUser } from '@/api';
+import { validateEmail } from '@/utils/validation';
 
 export default {
 	data() {
