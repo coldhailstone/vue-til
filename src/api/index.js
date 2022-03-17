@@ -1,12 +1,17 @@
 import store from '@/store';
 import axios from 'axios';
+import { setInterceptors } from './common/interceptors';
 
-const API = axios.create({
-	baseURL: process.env.VUE_APP_API_URL,
-	headers: {
-		Authorization: store.state.token,
-	},
-});
+function createInstance() {
+	const instance = axios.create({
+		baseURL: process.env.VUE_APP_API_URL,
+		headers: {
+			Authorization: store.state.token,
+		},
+	});
+	return setInterceptors(instance);
+}
+const API = createInstance();
 
 function registerUser(userData) {
 	return API.post('/signup', userData);
