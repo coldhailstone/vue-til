@@ -17,4 +17,8 @@ function loginUser(userData) {
 	return API.post('/login', userData);
 }
 
-export { registerUser, loginUser };
+function fetchPosts() {
+	return API.get('/posts');
+}
+
+export { registerUser, loginUser, fetchPosts };
