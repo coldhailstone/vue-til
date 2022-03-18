@@ -8,7 +8,7 @@
 		</div>
 		<div class="post-time">
 			{{ item.createdAt }}
-			<i class="icon ion-md-create"></i>
+			<i class="icon ion-md-create" @click="routEditPage"></i>
 			<i class="icon ion-md-trash" @click="deleteItem"></i>
 		</div>
 	</li>
@@ -25,6 +25,9 @@ export default {
 		},
 	},
 	methods: {
+		routEditPage(id) {
+			this.$router.push(`/post/${id}`);
+		},
 		async deleteItem() {
 			if (confirm('You want to delete it')) {
 				await deletePost(this.item._id);
