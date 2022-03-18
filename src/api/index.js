@@ -7,18 +7,22 @@ function createInstance() {
 	});
 	return setInterceptors(instance);
 }
-const API = createInstance();
+const instance = createInstance();
 
 function registerUser(userData) {
-	return API.post('/signup', userData);
+	return instance.post('/signup', userData);
 }
 
 function loginUser(userData) {
-	return API.post('/login', userData);
+	return instance.post('/login', userData);
 }
 
 function fetchPosts() {
-	return API.get('/posts');
+	return instance.get('/posts');
 }
 
-export { registerUser, loginUser, fetchPosts };
+function createPost(postData) {
+	return instance.post('posts', postData);
+}
+
+export { registerUser, loginUser, fetchPosts, createPost };
