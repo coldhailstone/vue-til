@@ -21,6 +21,8 @@
 </template>
 
 <script>
+import { deleteCookie } from '@/utils/cookies';
+
 export default {
 	computed: {
 		isUserLogin() {
@@ -33,7 +35,10 @@ export default {
 	methods: {
 		logoutUser() {
 			this.$store.commit('clearUsername');
-			this.$router.push('/');
+			this.$store.commit('clearToken');
+			deleteCookie('til_auth');
+			deleteCookie('til_user');
+			this.$router.push('/login');
 		},
 	},
 };
