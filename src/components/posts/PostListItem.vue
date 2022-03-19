@@ -7,7 +7,7 @@
 			{{ item.contents }}
 		</div>
 		<div class="post-time">
-			{{ item.createdAt }}
+			{{ item.createdAt | formatDate }}
 			<i class="icon ion-md-create" @click="routEditPage"></i>
 			<i class="icon ion-md-trash" @click="deleteItem"></i>
 		</div>
@@ -22,6 +22,11 @@ export default {
 		item: {
 			type: Object,
 			required: true,
+		},
+	},
+	filters: {
+		formatDate(value) {
+			return new Date(value);
 		},
 	},
 	methods: {
