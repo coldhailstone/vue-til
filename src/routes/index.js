@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
+import store from '@/store';
 
 Vue.use(VueRouter);
 
@@ -41,8 +42,9 @@ const router = new VueRouter({
 });
 
 router.beforeEach((to, from, next) => {
-	if (to.meta.auth) {
+	if (to.meta.auth && !store.getters.isLogin) {
 		console.log('인증이 필요합니다');
+		return next('/login');
 	}
 	next();
 });
