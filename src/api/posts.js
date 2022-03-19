@@ -12,8 +12,12 @@ function createPost(postData) {
 	return posts.post('/', postData);
 }
 
+function editPost(postId, postData) {
+	return posts.put(postId, postData);
+}
+
 function deletePost(postId) {
 	return posts.delete(postId);
 }
 
-export { fetchPosts, fetchPost, createPost, deletePost };
+export { fetchPosts, fetchPost, createPost, editPost, deletePost };
