@@ -25,7 +25,8 @@ export default {
 		},
 	},
 	methods: {
-		routEditPage(id) {
+		routEditPage() {
+			const id = this.item._id;
 			this.$router.push(`/post/${id}`);
 		},
 		async deleteItem() {
