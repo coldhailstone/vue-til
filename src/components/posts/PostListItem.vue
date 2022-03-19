@@ -24,11 +24,6 @@ export default {
 			required: true,
 		},
 	},
-	filters: {
-		formatDate(value) {
-			return new Date(value);
-		},
-	},
 	methods: {
 		routEditPage() {
 			const id = this.item._id;
