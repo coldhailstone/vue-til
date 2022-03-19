@@ -1,7 +1,11 @@
 import { posts } from './index';
 
 function fetchPosts() {
-	return posts.get('/');
+	return posts.get();
+}
+
+function fetchPost(postId) {
+	return posts.get(postId);
 }
 
 function createPost(postData) {
@@ -12,4 +16,4 @@ function deletePost(postId) {
 	return posts.delete(postId);
 }
 
-export { fetchPosts, createPost, deletePost };
+export { fetchPosts, fetchPost, createPost, deletePost };

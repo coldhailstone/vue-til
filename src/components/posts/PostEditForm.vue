@@ -24,6 +24,8 @@
 </template>
 
 <script>
+import { fetchPost } from '@/api/posts';
+
 export default {
 	data() {
 		return {
@@ -37,13 +39,15 @@ export default {
 			return this.contents.length <= 250;
 		},
 	},
+	async created() {
+		const id = this.$route.params.id;
+		const { data } = await fetchPost(id);
+		this.title = data.title;
+		this.contents = data.contents;
+	},
 	methods: {
 		async submitForm() {
 			try {
-				// await createPost({
-				// 	title: this.title,
-				// 	contents: this.contents,
-				// });
 				// this.$router.push('/main');
 			} catch (error) {
 				this.logMessage = error.response.data.message;
