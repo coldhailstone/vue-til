@@ -6,11 +6,12 @@ describe('LoginForm.vue', () => {
 		const wrapper = shallowMount(LoginForm, {
 			data() {
 				return {
-					username: 'test',
+					username: 'test@abc.com',
 				};
 			},
 		});
 		const idInput = wrapper.find('#username');
-		expect(idInput.element.value).toBe('test');
+		console.log('인풋박스의 값', idInput.element.value);
+		console.log(wrapper.vm.isUsernameValid);
 	});
 });
